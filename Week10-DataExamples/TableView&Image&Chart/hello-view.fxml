@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.CategoryAxis?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.demo.Controller">
+    <top>
+        <Label text="People" BorderPane.alignment="CENTER_LEFT">
+            <BorderPane.margin>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </BorderPane.margin>
+        </Label>
+    </top>
+
+    <center>
+        <TableView fx:id="table" prefHeight="240">
+            <columns>
+                <TableColumn fx:id="nameCol" text="Name" prefWidth="160"/>
+                <TableColumn fx:id="cityCol" text="City" prefWidth="160"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <VBox spacing="8" BorderPane.alignment="CENTER_LEFT">
+            <children>
+                <HBox spacing="8">
+                    <children>
+                        <TextField fx:id="nameField" promptText="Name" />
+                        <TextField fx:id="cityField" promptText="City" />
+                        <Button fx:id="addBtn" text="Add" onAction="#handleAdd"/>
+                        <Button fx:id="removeBtn" text="Remove Selected" onAction="#handleRemove"/>
+                    </children>
+                </HBox>
+                <Label fx:id="selectedLabel" text="Selected: (none)" />
+                <!-- 🔵 NEW: Simple BarChart showing counts by City -->
+                <BarChart fx:id="barChart" prefHeight="220">
+                    <xAxis>
+                        <CategoryAxis label="City"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis label="# People"/>
+                    </yAxis>
+                </BarChart>
+            </children>
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+        </VBox>
+    </bottom>
+</BorderPane>
