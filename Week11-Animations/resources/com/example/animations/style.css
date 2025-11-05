@@ -1,0 +1,26 @@
+.root { -fx-font-family: "Segoe UI"; -fx-background-color: #f7f8fa; }
+
+.h1 { -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #0f172a; }
+
+.button { -fx-background-radius: 10; -fx-padding: 8 14; }
+#startBtn  { -fx-background-color: #1769e0; -fx-text-fill: white; }
+#sparkleBtn{ -fx-background-color: #22c55e; -fx-text-fill: white; }
+#errorBtn  { -fx-background-color: #ef4444; -fx-text-fill: white; }
+
+.card {
+  -fx-background-color: white;
+  -fx-background-radius: 12;
+  -fx-padding: 12;
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0.25, 0, 2);
+}
+
+/* Toast */
+.toast {
+  -fx-background-color: rgba(15,23,42,0.92);
+  -fx-text-fill: white;
+  -fx-padding: 6 10;
+  -fx-background-radius: 8;
+}
+
+/* Sparkles */
+.sparkle { -fx-fill: #ffd166; }

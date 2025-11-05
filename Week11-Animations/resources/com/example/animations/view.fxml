@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import java.net.URL?>
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.animations.DemoController"
+      spacing="12" alignment="CENTER">
+    <stylesheets><URL value="@style.css"/></stylesheets>
+
+    <Label text="Motion with Meaning" styleClass="h1"/>
+    <Label fx:id="statusLabel" text="Ready" />
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button fx:id="startBtn" text="Start Task" onAction="#handleStart"/>
+        <Button fx:id="sparkleBtn" text="✨ Sparkle" onAction="#handleSparkle"/>
+        <Button fx:id="errorBtn" text="Sim Error" onAction="#handleError"/>
+    </HBox>
+
+    <!-- Spinner -->
+    <StackPane fx:id="spinner" visible="false">
+        <Circle radius="16" strokeWidth="4" stroke="#cbd5e1" fill="transparent"/>
+        <Arc fx:id="spinnerArc" radiusX="16" radiusY="16" startAngle="0" length="90"
+             strokeWidth="4" stroke="#1769e0" fill="transparent" type="OPEN"/>
+    </StackPane>
+
+    <!-- Toast -->
+    <Label fx:id="toast" text="" visible="false" opacity="0.0" styleClass="toast"/>
+
+    <!-- Success GIF -->
+    <ImageView fx:id="ggGif" visible="false" fitWidth="160" preserveRatio="true"/>
+
+    <!-- Play area -->
+    <Pane fx:id="sparkleLayer" prefHeight="260" prefWidth="560" styleClass="card"/>
+
+    <padding><Insets top="18" right="18" bottom="18" left="18"/></padding>
+</VBox>
