@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.transitions.ReportsController"
+            prefWidth="720" prefHeight="420"
+            stylesheets="@demo.css">
+
+    <top>
+        <HBox spacing="8" alignment="CENTER_LEFT"
+              style="-fx-padding:12; -fx-background-color: linear-gradient(to right,#222,#333);">
+            <Button fx:id="backBtn" text="← Back"/>
+            <Label text="Reports" style="-fx-text-fill:white; -fx-font-weight:bold; -fx-padding:0 0 0 8;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="exportBtn" text="Export CSV"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="14" alignment="TOP_CENTER"
+              style="-fx-padding:20;">
+            <HBox spacing="8" alignment="CENTER_LEFT" maxWidth="520">
+                <Button fx:id="generateBtn" text="Generate Report"/>
+                <ProgressBar fx:id="progress" prefWidth="320" progress="0.0"/>
+                <Label fx:id="status" text="Idle" style="-fx-text-fill:#cbd5e1;"/>
+            </HBox>
+
+            <BarChart fx:id="chart" title="Orders by Status"
+                      prefWidth="560" prefHeight="260">
+                <xAxis>
+                    <CategoryAxis label="Status"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis label="Count"/>
+                </yAxis>
+            </BarChart>
+        </VBox>
+    </center>
+</BorderPane>

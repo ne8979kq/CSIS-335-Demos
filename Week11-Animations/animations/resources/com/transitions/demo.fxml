@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<BorderPane prefHeight="420" prefWidth="720" stylesheets="@demo.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.transitions.DemoController">
+
+    <!-- Top bar -->
+    <top>
+        <HBox spacing="8" style="-fx-padding:12; -fx-background-color: linear-gradient(to right,#222,#333);">
+            <Button fx:id="loadBtn" text="Load" />
+            <Button fx:id="successBtn" text="Success" />
+            <Button fx:id="errorBtn" text="Sim Error" />
+            <Button fx:id="reportsBtn" text="Reports"/>
+            <Region HBox.hgrow="ALWAYS" />
+            <Label style="-fx-text-fill: white; -fx-font-weight: bold;" text="Animations Demo" />
+        </HBox>
+    </top>
+
+    <!-- Center content -->
+    <center>
+        <StackPane fx:id="rootStack" style="-fx-background-color: radial-gradient(center 50% 50%, radius 120%, #1c1c1c 0%, #0f0f0f 100%);">
+
+            <!-- Slide-in banner (starts hidden and non-pickable) -->
+            <HBox fx:id="banner" alignment="CENTER" mouseTransparent="true" opacity="0" pickOnBounds="false" prefHeight="286.0" prefWidth="723.0" spacing="8" style="-fx-background-color: #22543d; -fx-padding:8; -fx-background-radius: 0 0 6 6;" translateY="-50" StackPane.alignment="TOP_CENTER">
+                <Label fx:id="bannerIcon" style="-fx-text-fill: white; -fx-font-size: 14;" text="✓" />
+                <Label fx:id="bannerText" style="-fx-text-fill: white; -fx-font-size: 14;" text="Ready." />
+            <StackPane.margin>
+               <Insets top="50.0" />
+            </StackPane.margin>
+            </HBox>
+
+            <!-- Card -->
+            <VBox fx:id="card" alignment="CENTER" spacing="10" style="-fx-padding:20; -fx-background-color:#222; -fx-background-radius:12; -fx-border-color:#444; -fx-border-radius:12;">
+                <Label fx:id="title" style="-fx-text-fill: white; -fx-font-size: 20; -fx-font-weight: bold;" text="Orders" />
+                <Label fx:id="statusLabel" style="-fx-text-fill: #cbd5e1; -fx-font-size: 13;" text="Idle" />
+                <Button fx:id="cta" style="-fx-background-color:#3b82f6; -fx-text-fill:white; -fx-background-radius:8;" text="Process Next" />
+
+                <!-- Spinner -->
+                <StackPane>
+                    <Circle fx:id="spinner" fill="transparent" opacity="0" radius="16" stroke="#60a5fa" strokeWidth="3" />
+                </StackPane>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>
