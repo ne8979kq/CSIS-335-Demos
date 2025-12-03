@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.api.HelloController"
+            prefWidth="800" prefHeight="500">
+
+    <top>
+        <HBox spacing="8" style="-fx-padding:10;">
+            <Button text="Load from API"
+                    fx:id="loadApiButton"
+                    onAction="#onLoadFromApi"/>
+
+            <Button text="Save Cache"
+                    fx:id="saveCacheButton"
+                    onAction="#onSaveCache"/>
+
+            <Button text="Load Cache"
+                    fx:id="loadCacheButton"
+                    onAction="#onLoadCache"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ListView fx:id="listView"/>
+    </center>
+
+    <bottom>
+        <Label fx:id="statusLabel"
+               style="-fx-padding:8;"
+               text="Ready."/>
+    </bottom>
+
+</BorderPane>
